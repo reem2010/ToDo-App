@@ -6,3 +6,30 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  id          String   @id @default(uuid())
+  email       String   @unique
+  userName     String
+  password    String
+  creatred_at DateTime @default(now())
+  tasks  Task[]
+}
+
+model Task {
+  id        Int      @id @default(autoincrement())
+  title     String
+  description String
+  priority  Priority @default(Normal)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @default(now())
+  userId String
+  owner User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+enum Priority {
+  Critical
+  High
+  Normal
+  Low
+}
