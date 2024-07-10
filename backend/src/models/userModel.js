@@ -9,6 +9,7 @@ export const createUser = async (userName, email, password) => {
   });
   return user;
 };
+// console.log(createUser("reem", "reem"));
 
 export const updateUser = async (email, newData) => {
   const user = await prisma.user.update({
