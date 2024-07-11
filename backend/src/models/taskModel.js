@@ -11,9 +11,7 @@ export const updateTask = async (taskId, taskData) => {
     where: {
       id: taskId,
     },
-    data: {
-      taskData,
-    },
+    data: taskData,
   });
   return task;
 };
@@ -28,10 +26,19 @@ export const getTask = async (taskId) => {
 };
 
 export const deleteTask = async (taskId) => {
-  const task = prisma.user.delete({
+  const task = prisma.task.delete({
     where: {
       id: taskId,
     },
   });
   return task;
+};
+
+export const getTasks = async (userId) => {
+  const tasks = prisma.task.findMany({
+    where: {
+      userId: userId,
+    },
+  });
+  return tasks;
 };
