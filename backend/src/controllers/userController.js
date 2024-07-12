@@ -20,16 +20,19 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
+  console.log("here");
   const { email, password } = req.body;
   try {
     const user = await userModel.getUser(email);
     if (!user) {
-      res.status(401).json({ message: "user doesn't exist" });
+      return res.status(401).json({ message: "user doesn't exist" });
     }
     if (await bcrypt.compare(password, user.password)) {
       const token = jwt.sign({ id: user.id, email: user.email }, secretKey);
       res.cookie("access-token", token);
-      res.status(200).json({ message: "user logged in successfully" });
+      res
+        .status(200)
+        .json({ token: token, message: "user logged in successfully" });
     } else {
       res.status(401).json({ message: "invalid password" });
     }

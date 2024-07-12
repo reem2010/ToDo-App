@@ -4,8 +4,11 @@
     "web": {
       "bundler": "metro"
     },
-    "plugins": ["expo-router"],
-    "name": "todo",
-    "slug": "todo"
+    "plugins": [
+      "expo-router",
+      "expo-secure-store"
+    ],
+    "name": "frontend",
+    "slug": "frontend"
   }
 }

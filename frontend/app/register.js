@@ -1,12 +1,8 @@
-import { useState } from "react";
 import { SafeAreaView, ScrollView, View } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { Text } from "react-native";
-import { Header } from "../components/home/header";
-import Icons from "../constants/icon";
-import { Login } from "../components/auth/login";
+import { SignupComponent } from "../components/auth/signup";
 
-const Home = () => {
+const Signup = () => {
   const router = useRouter();
 
   return (
@@ -18,9 +14,9 @@ const Home = () => {
       }}
     >
       <Stack.Screen />
-      <Login router={router} />
+      <SignupComponent router={router} />
     </SafeAreaView>
   );
 };
 
-export default Home;
+export default Signup;
