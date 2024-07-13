@@ -59,7 +59,12 @@ export const styles = StyleSheet.create({
   floating: {
     position: "absolute",
     right: 10,
-    bottom: 10,
+    bottom: 6,
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    borderWidth: 1,
+    borderColor: "white",
   },
   editIcon: {
     width: 15,
