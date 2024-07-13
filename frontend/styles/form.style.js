@@ -1,11 +1,9 @@
-import { StyleSheet, TextInput } from "react-native";
+import { StyleSheet } from "react-native";
 
 export const styles = StyleSheet.create({
   container: {
     backgroundColor: "rgba(0, 0, 0, 0.99)",
     textAlign: "center",
-    // height: "100%",
-    // paddingTop: 60,
   },
   form: {
     margin: 0,
