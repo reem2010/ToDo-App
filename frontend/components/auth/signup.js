@@ -15,7 +15,7 @@ export const SignupComponent = ({ router }) => {
       if (data) {
         setError(data);
       } else {
-        router.replace(`/`);
+        router.replace(`/login`);
       }
     }
   };
@@ -52,7 +52,7 @@ export const SignupComponent = ({ router }) => {
         <TouchableOpacity
           style={styles.submit}
           onPress={() => {
-            router.replace(`/`);
+            router.replace(`/login`);
           }}
         >
           <Text style={styles.buttonText}>

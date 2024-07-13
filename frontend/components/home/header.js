@@ -4,7 +4,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 export const Header = ({ iconUrl, router }) => {
   const handleLogout = async () => {
     await AsyncStorage.removeItem("token");
-    router.replace(`/`);
+    router.replace(`/login`);
   };
 
   return (

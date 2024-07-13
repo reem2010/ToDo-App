@@ -4,6 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: "rgba(0, 0, 0, 0.99)",
     textAlign: "center",
+    // height: "100%",
+    // paddingTop: 60,
   },
   form: {
     margin: 0,
@@ -66,5 +68,15 @@ export const styles = StyleSheet.create({
     margin: 8,
     paddingVertical: 10,
     backgroundColor: "rgba(0, 0, 0, 0.99)",
+  },
+  popUp: {
+    width: "90%",
+    minHeight: "90%",
+    margin: "auto",
+    backgroundColor: "rgba(0, 0, 0, 0.99)",
+    borderWidth: 1,
+    borderColor: "rgba(239, 239, 255, 0.99)",
+    borderRadius: 15,
+    padding: 20,
   },
 });

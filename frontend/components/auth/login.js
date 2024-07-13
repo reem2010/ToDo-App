@@ -3,7 +3,7 @@ import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import { styles } from "../../styles/form.style";
 import { loginFetch } from "../../Api/auth";
 
-export const Login = ({ router }) => {
+export const LoginComponent = ({ router }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");

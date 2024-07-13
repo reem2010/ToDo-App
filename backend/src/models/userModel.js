@@ -9,7 +9,6 @@ export const createUser = async (userName, email, password) => {
   });
   return user;
 };
-// console.log(createUser("reem", "reem"));
 
 export const updateUser = async (email, newData) => {
   const user = await prisma.user.update({
@@ -24,16 +23,16 @@ export const updateUser = async (email, newData) => {
 };
 
 export const getUserById = async (userId) => {
-  const user = prisma.user.findUnique({
+  const user = await prisma.user.findUnique({
     where: {
-      id: userid,
+      id: userId,
     },
   });
   return user;
 };
 
 export const getUser = async (userEmail) => {
-  const user = prisma.user.findUnique({
+  const user = await prisma.user.findUnique({
     where: {
       email: userEmail,
     },
@@ -42,7 +41,7 @@ export const getUser = async (userEmail) => {
 };
 
 export const deleteUser = async (userEmail) => {
-  const user = prisma.user.delete({
+  const user = await prisma.user.delete({
     where: {
       email: userEmail,
     },

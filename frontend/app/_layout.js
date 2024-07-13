@@ -1,5 +1,15 @@
 import { Stack } from "expo-router";
 
-export default function Layout() {
-  return <Stack />;
-}
+export const unstable_settings = {
+  initialRouteName: "login",
+};
+
+const Layout = () => {
+  return (
+    <Stack initialRouteName="login">
+      <Stack.Screen name="login" />
+    </Stack>
+  );
+};
+
+export default Layout;

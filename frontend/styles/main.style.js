@@ -27,8 +27,8 @@ export const styles = StyleSheet.create({
     cursor: "pointer",
   },
   deletebutton: {
-    width: 15,
-    height: 15,
+    width: 20,
+    height: 20,
     borderWidth: 0,
     cursor: "pointer",
     alignSelf: "flex-end",
@@ -60,5 +60,21 @@ export const styles = StyleSheet.create({
     position: "absolute",
     right: 10,
     bottom: 10,
+  },
+  editIcon: {
+    width: 15,
+    height: 15,
+  },
+  deleteIcon: {
+    width: 20,
+    height: 20,
+  },
+  text: {
+    color: "#ffffff",
+    marginTop: 200,
+    marginBottom: 30,
+    fontSize: 40,
+    textAlign: "center",
+    padding: 50,
   },
 });

@@ -28,6 +28,7 @@ export const AddPopup = ({ changeVisibility, triggerUpdated, addVisible }) => {
       }
     }
   };
+
   return (
     <Modal
       animationType="slide"
@@ -35,18 +36,7 @@ export const AddPopup = ({ changeVisibility, triggerUpdated, addVisible }) => {
       visible={addVisible}
       onRequestClose={changeVisibility}
     >
-      <View
-        style={{
-          width: "90%",
-          minHeight: "90%",
-          margin: "auto",
-          backgroundColor: "rgba(0, 0, 0, 0.99)",
-          borderWidth: 1,
-          borderColor: "rgba(239, 239, 255, 0.99)",
-          borderRadius: 15,
-          padding: 20,
-        }}
-      >
+      <View style={styles.popUp}>
         <Text style={styles.text}>Create task</Text>
 
         <TextInput
@@ -100,9 +90,9 @@ export const UpdatePopup = ({
   changeVisibility,
   Visible,
 }) => {
-  const [title, setTitle] = useState(data.title);
-  const [description, setDescription] = useState(data.description);
-  const [priority, setPriority] = useState(data.priority);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [priority, setPriority] = useState("Normal");
   const handleSubmit = async () => {
     if (title != "" && description != "") {
       const res = await UpdateTask(
@@ -126,18 +116,7 @@ export const UpdatePopup = ({
       visible={Visible}
       onRequestClose={changeVisibility}
     >
-      <View
-        style={{
-          width: "90%",
-          minHeight: "90%",
-          margin: "auto",
-          backgroundColor: "rgba(0, 0, 0, 0.99)",
-          borderWidth: 1,
-          borderColor: "rgba(239, 239, 255, 0.99)",
-          borderRadius: 15,
-          padding: 20,
-        }}
-      >
+      <View style={styles.popUp}>
         <Text style={styles.text}>Update task</Text>
 
         <TextInput

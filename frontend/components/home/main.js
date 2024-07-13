@@ -4,7 +4,6 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import Icons from "../../constants/icon.js";
 import { styles } from "../../styles/main.style.js";
 import { UpdatePopup } from "./popUp.js";
-import { Ionicons } from "@expo/vector-icons";
 
 export const HomeComponent = ({ updated, triggerUpdated }) => {
   const [tasks, setTasks] = useState(null);
@@ -29,7 +28,7 @@ export const HomeComponent = ({ updated, triggerUpdated }) => {
 
   return (
     <View style={{ justifyContent: "center", alignItems: "center" }}>
-      {tasks &&
+      {tasks && tasks.length > 0 ? (
         tasks.map((data) => {
           return (
             <View style={styles.task} key={data.id}>
@@ -43,7 +42,7 @@ export const HomeComponent = ({ updated, triggerUpdated }) => {
                   }}
                 >
                   <Image
-                    style={{ width: 15, height: 15 }}
+                    style={styles.editIcon}
                     source={Icons.edit}
                     resizeMode="cover"
                   />
@@ -63,7 +62,7 @@ export const HomeComponent = ({ updated, triggerUpdated }) => {
                 }}
               >
                 <Image
-                  style={{ width: 20, height: 20 }}
+                  style={styles.deleteIcon}
                   source={Icons.trash}
                   resizeMode="cover"
                 />
@@ -76,7 +75,10 @@ export const HomeComponent = ({ updated, triggerUpdated }) => {
               />
             </View>
           );
-        })}
+        })
+      ) : (
+        <Text style={styles.text}>No tasks to show</Text>
+      )}
     </View>
   );
 };

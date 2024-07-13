@@ -17,7 +17,7 @@ export const updateTask = async (taskId, taskData) => {
 };
 
 export const getTask = async (taskId) => {
-  const task = prisma.task.findUnique({
+  const task = await prisma.task.findUnique({
     where: {
       id: taskId,
     },
@@ -26,7 +26,7 @@ export const getTask = async (taskId) => {
 };
 
 export const deleteTask = async (taskId) => {
-  const task = prisma.task.delete({
+  const task = await prisma.task.delete({
     where: {
       id: taskId,
     },
@@ -35,7 +35,7 @@ export const deleteTask = async (taskId) => {
 };
 
 export const getTasks = async (userId) => {
-  const tasks = prisma.task.findMany({
+  const tasks = await prisma.task.findMany({
     where: {
       userId: userId,
     },

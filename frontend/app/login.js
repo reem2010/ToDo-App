@@ -1,9 +1,9 @@
 import { SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { SignupComponent } from "../components/auth/signup";
+import { LoginComponent } from "../components/auth/login";
 import { commonStyles } from "../styles/common.style";
 
-const Signup = () => {
+const Login = () => {
   const router = useRouter();
 
   return (
@@ -12,13 +12,13 @@ const Signup = () => {
         options={{
           headerStyle: { backgroundColor: "#000000" },
           headerShadowVisible: true,
-          headerTintColor: "white",
           headerTitle: "",
+          headerTintColor: "white",
         }}
       />
-      <SignupComponent router={router} />
+      <LoginComponent router={router} />
     </SafeAreaView>
   );
 };
 
-export default Signup;
+export default Login;

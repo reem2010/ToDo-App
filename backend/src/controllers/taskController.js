@@ -33,13 +33,17 @@ export const updateTask = async (req, res) => {
   const { title, description, priority } = req.body;
 
   try {
-    const task = await taskModel.updateTask(taskId, {
+    const task = await taskModel.getTask(taskId);
+    if (task.userId != req.user.id) {
+      return res.status(401).json({ message: "Unauthorized user" });
+    }
+    const updatedTask = await taskModel.updateTask(taskId, {
       title,
       description,
       priority,
     });
     res.status(200).json({
-      task: task,
+      task: updatedTask,
       message: "task updated successfully",
     });
   } catch (err) {
@@ -50,6 +54,10 @@ export const updateTask = async (req, res) => {
 export const deleteTask = async (req, res) => {
   const taskId = +req.params.taskId;
   try {
+    const task = await taskModel.getTask(taskId);
+    if (task.userId != req.user.id) {
+      return res.status(401).json({ message: "Unauthorized user" });
+    }
     await taskModel.deleteTask(taskId);
     res.status(200).json({
       message: "task deleted successfully",

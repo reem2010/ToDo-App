@@ -6,6 +6,8 @@ import { HomeComponent } from "../components/home/main";
 import Icons from "../constants/icon";
 import { Ionicons } from "@expo/vector-icons";
 import { AddPopup } from "../components/home/popUp";
+import { styles } from "../styles/main.style";
+import { commonStyles } from "../styles/common.style";
 
 const Home = () => {
   const router = useRouter();
@@ -20,17 +22,13 @@ const Home = () => {
     setUpdated(!updated);
   };
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        backgroundColor: "rgb(11, 9, 9)",
-        justifyContent: "center",
-      }}
-    >
+    <SafeAreaView style={commonStyles.safeArea}>
       <Stack.Screen
         options={{
-          headerStyle: { backgroundColor: "rgb(11, 9, 9)", color: "#ffffff" },
+          headerStyle: { backgroundColor: "rgb(11, 9, 9)" },
           headerShadowVisible: true,
+          headerTitleStyle: { color: "white" },
+          headerTintColor: "white",
           headerTitle: "Todo",
           headerRight: () => <Header iconUrl={Icons.logout} router={router} />,
         }}
@@ -39,11 +37,7 @@ const Home = () => {
         <HomeComponent updated={updated} triggerUpdated={triggerUpdated} />
       </ScrollView>
       <TouchableOpacity
-        style={{
-          position: "absolute",
-          right: 10,
-          bottom: 10,
-        }}
+        style={styles.floating}
         onPress={() => {
           setVisible(!addVisible);
         }}
