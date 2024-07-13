@@ -1,6 +1,7 @@
 // Create task
 POST http://localhost:3000/tasks
 Content-Type: application/json
+Authorization: "add token"
 
 {
     "title": "New Task",
@@ -14,12 +15,14 @@ Content-Type: application/json
 // Delete task
 DELETE http://localhost:3000/tasks/1
 Content-Type: application/json
+Authorization: "add token"
 
 ###
 
 // Update task
 PUT http://localhost:3000/tasks/2
 Content-Type: application/json
+Authorization: "add token"
 
 {
     "title": "new Updated Task",
@@ -27,7 +30,9 @@ Content-Type: application/json
     "priority": "Normal"
 }
 
+
 ###
 
 // Get task
 GET  http://localhost:3000/tasks/
+Authorization: "add token"
