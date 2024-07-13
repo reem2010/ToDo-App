@@ -68,7 +68,6 @@ export const AddPopup = ({ changeVisibility, triggerUpdated, addVisible }) => {
             setPriority(prio);
           }}
           mode="dropdown"
-          dropdownIconColor={processColor("#ffffff")}
         >
           <Picker.Item label="Critical" value="Critical" />
           <Picker.Item label="High" value="High" />

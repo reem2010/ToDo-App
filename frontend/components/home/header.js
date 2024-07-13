@@ -9,11 +9,7 @@ export const Header = ({ iconUrl, router }) => {
 
   return (
     <TouchableOpacity style={{ paddingRight: 15 }} onPress={handleLogout}>
-      <Image
-        style={{ width: 20, height: 25 }}
-        source={iconUrl}
-        resizeMode="cover"
-      />
+      <Image style={{ width: 20, height: 25 }} source={iconUrl} />
     </TouchableOpacity>
   );
 };

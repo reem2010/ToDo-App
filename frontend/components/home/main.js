@@ -41,11 +41,7 @@ export const HomeComponent = ({ updated, triggerUpdated }) => {
                     setSelected(data);
                   }}
                 >
-                  <Image
-                    style={styles.editIcon}
-                    source={Icons.edit}
-                    resizeMode="cover"
-                  />
+                  <Image style={styles.editIcon} source={Icons.edit} />
                 </TouchableOpacity>
               </View>
               <Text style={styles.description}>{data.description}</Text>
@@ -61,11 +57,7 @@ export const HomeComponent = ({ updated, triggerUpdated }) => {
                   handleDelete(data.id);
                 }}
               >
-                <Image
-                  style={styles.deleteIcon}
-                  source={Icons.trash}
-                  resizeMode="cover"
-                />
+                <Image style={styles.deleteIcon} source={Icons.trash} />
               </TouchableOpacity>
               <UpdatePopup
                 data={selected}
