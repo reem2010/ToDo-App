@@ -36,7 +36,7 @@ Make sure you have the following installed:
 **Clone the repository:**
 
 ```sh
-git https://github.com/reem2010/ToDo-App.git
+git clone https://github.com/reem2010/ToDo-App.git
 ```
 
 #### Backend
