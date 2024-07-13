@@ -18,8 +18,3 @@ Content-Type: application/json
     "email": "reem4@gmail.com",
     "password": "123"
 }
-
-###
-// Logout user
-
-POST http://localhost:3000/auth/logout

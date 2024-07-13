@@ -1,4 +1,4 @@
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { SignupComponent } from "../components/auth/signup";
 
@@ -13,7 +13,13 @@ const Signup = () => {
         backgroundColor: "rgb(11, 9, 9)",
       }}
     >
-      <Stack.Screen />
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: "rgb(11, 9, 9)" },
+          headerShadowVisible: true,
+          headerTitle: "",
+        }}
+      />
       <SignupComponent router={router} />
     </SafeAreaView>
   );

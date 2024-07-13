@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { styles } from "./styles/auth.style";
-import { loginFetch } from "./Api/auth";
+import { styles } from "../../styles/form.style";
+import { loginFetch } from "../../Api/auth";
 
 export const Login = ({ router }) => {
   const [email, setEmail] = useState("");
@@ -12,6 +12,8 @@ export const Login = ({ router }) => {
       const data = await loginFetch(email, password);
       if (data) {
         setError(data);
+      } else {
+        router.push(`/home`);
       }
     }
   };

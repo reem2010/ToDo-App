@@ -4,7 +4,7 @@ const secretKey = process.env.SECRETKEY;
 
 export const authorizedUser = (req, res, next) => {
   try {
-    const token = req.cookies["access-token"];
+    const token = req.headers["authorization"];
     jwt.verify(token, secretKey, (err, data) => {
       if (err) {
         return res.status(401).json({ message: "Unauthorized user" });

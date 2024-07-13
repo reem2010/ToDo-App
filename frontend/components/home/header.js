@@ -1,8 +1,14 @@
-import { SafeAreaView, ScrollView, View, Text } from "react-native";
 import { Image, TouchableOpacity } from "react-native";
-export const Header = ({ iconUrl, dimension, handlePress }) => {
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
+export const Header = ({ iconUrl, router }) => {
+  const handleLogout = async () => {
+    await AsyncStorage.removeItem("token");
+    router.replace(`/`);
+  };
+
   return (
-    <TouchableOpacity style={{ paddingRight: 15 }}>
+    <TouchableOpacity style={{ paddingRight: 15 }} onPress={handleLogout}>
       <Image
         style={{ width: 20, height: 25 }}
         source={iconUrl}

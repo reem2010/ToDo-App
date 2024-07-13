@@ -20,7 +20,6 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-  console.log("here");
   const { email, password } = req.body;
   try {
     const user = await userModel.getUser(email);
@@ -39,8 +38,4 @@ export const login = async (req, res) => {
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
-};
-export const logout = async (req, res) => {
-  res.clearCookie("access-token");
-  res.status(200).json({ message: "logged out successfully" });
 };

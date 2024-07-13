@@ -54,4 +54,17 @@ export const styles = StyleSheet.create({
   errorText: {
     color: "red",
   },
+  picker: {
+    width: "90%",
+    height: "90",
+    borderWidth: 2,
+    borderColor: "rgba(239, 239, 255, 0.99)",
+    borderRadius: 15,
+    textAlign: "center",
+    paddingHorizontal: 10,
+    color: "rgba(255, 255, 255, 0.72)",
+    margin: 8,
+    paddingVertical: 10,
+    backgroundColor: "rgba(0, 0, 0, 0.99)",
+  },
 });

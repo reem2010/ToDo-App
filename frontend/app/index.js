@@ -1,9 +1,5 @@
-import { useState } from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { SafeAreaView } from "react-native";
 import { Stack, useRouter } from "expo-router";
-import { Text } from "react-native";
-import { Header } from "../components/home/header";
-import Icons from "../constants/icon";
 import { Login } from "../components/auth/login";
 
 const Home = () => {
@@ -17,7 +13,13 @@ const Home = () => {
         backgroundColor: "rgb(11, 9, 9)",
       }}
     >
-      <Stack.Screen />
+      <Stack.Screen
+        options={{
+          headerStyle: { backgroundColor: "rgb(11, 9, 9)" },
+          headerShadowVisible: true,
+          headerTitle: "",
+        }}
+      />
       <Login router={router} />
     </SafeAreaView>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
-import { styles } from "./styles/auth.style";
-import { registerFetch } from "./Api/auth";
+import { styles } from "../../styles/form.style";
+import { registerFetch } from "../../Api/auth";
 
 export const SignupComponent = ({ router }) => {
   const [name, setName] = useState("");
