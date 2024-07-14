@@ -12,11 +12,25 @@ This Todo app allows users to manage their tasks effectively.users can view, add
 - Update an existing todo
 - Delete a todo
 
+## Screenshots
+
+### Login page
+
+![Login page](screenShots/login.jpg)
+
+### Signup page
+
+![Signup page](screenShots/signup.jpg)
+
+### Home page
+
+![Home page](screenShots/home.jpg)
+
 ## Technologies
 
 - **Backend**: Express.js
 - **Frontend**: Expo React Native
-- **Database**: Prisma.js ORM
+- **Database**: Prisma ORM
 
 ## Getting Started
 
@@ -27,9 +41,7 @@ To get started with the Todo app, follow these steps:
 Make sure you have the following installed:
 
 - Node.js and npm
-- Expo
 - PostgreSQL
-- Prisma
 
 ### Installation
 
